@@ -1,0 +1,3 @@
+# file: defaults/main.yml
+---
+mount_additional_disk_location: /srv/dynamic
