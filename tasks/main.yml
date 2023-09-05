@@ -35,3 +35,11 @@
   ansible.builtin.lineinfile:
     path: /etc/fstab
     line: "/dev/sdb1 {{ mount_additional_disk_location }} ext4 defaults 0 0"
+
+- name: Set permissions
+  ansible.builtin.file:
+    path: "{{ mount_additional_disk_location }}"
+    state: directory
+    owner: "{{ additional_disk_user }}"
+    group: "{{ additional_disk_user }}"
+    mode: 0777
